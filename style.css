@@ -18,7 +18,7 @@ body {
     grid-template-areas:
         "l m ln"
         "i i i"
-        ". . ."
+        "pc pc pc"
         ". . .";
     margin: 0;
     width: 100%;
@@ -121,3 +121,45 @@ ul li:hover .sub-menu {
     background-color: var(--palepink)
 
 }
+
+.symbol {
+    width: 50px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+
+#partners-customers {
+    display: grid;
+    grid-area: pc;
+}
+
+#partners-customers-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  #customers-logo-container {
+    width: 75%;
+    margin: auto;
+    width: fit-content;
+  }
+  
+  #partners-customers-title {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.5em;
+    width: fit-content;
+    margin: auto;
+  }
+  
+  .partner-image {
+    filter: grayscale(0);
+    width: 200px;
+  }
+  
+  .partner-image:hover {
+    filter: grayscale(100%);
+  }
+  
