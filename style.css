@@ -4,25 +4,30 @@
     --palepink: rgb(255, 247, 249);
     --paleblue: rgb(244, 248, 252);
     --video-background: rgb(16, 36, 65);
-  }
+}
 
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin:0;
+    margin: 0;
 }
 
 #container {
     display: grid;
-    grid-template-columns: 1fr,10fr,1fr;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr, 10fr, 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(120px, 1fr));
     grid-template-areas:
         "l m ln"
         "i i i"
         "pc pc pc"
-        ". . .";
+        "v v v"
+        "c c c"
+        "e e e"
+        ". . ."
+        "b b b";
     margin: 0;
     width: 100%;
-    height: fit-content;
+    max-height: fit-content;
+
 
 }
 
@@ -34,6 +39,8 @@ body {
     display: grid;
     grid-area: l;
     margin: 0;
+    align-content: center;
+    justify-content: center;
 }
 
 .menu {
@@ -48,14 +55,14 @@ ul {
     padding: 0;
 }
 
-.main-menu > li {
+.main-menu>li {
     display: inline-block;
     margin-right: 20px;
     margin-top: 20px;
     position: relative;
 }
 
-.main-menu > li:last-child {
+.main-menu>li:last-child {
     margin-right: 0;
 }
 
@@ -64,10 +71,16 @@ ul {
     top: 100%;
     left: 0;
     width: 100%;
+    height: 30px;
     z-index: 10;
     margin-top: 20px;
     display: none;
     box-shadow: red;
+}
+
+.sub-menu-element {
+    height: 50px;
+    width: max-content;
 }
 
 ul li:hover .sub-menu {
@@ -79,18 +92,20 @@ ul li:hover .sub-menu {
     color: white;
     margin-top: 20px;
 }
+
 .flag {
     width: 20px;
     height: 15px;
-  }
-  
+}
+
 #intro {
     display: grid;
     grid-area: i;
     grid-template-columns: 1fr, 1fr;
     grid-template-areas:
         "il ir";
-    margin: 0;
+    margin: 30px;
+    padding: 30px;
     width: 100%;
     height: fit-content;
 
@@ -102,64 +117,212 @@ ul li:hover .sub-menu {
     margin: 0;
     width: 100%;
     height: fit-content;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
 
 }
-.rect-button{
-    border-radius: 25px;
-    height: 50px;
-    width: 200px;
-    background-color: #FF96AA;
-    color: white;
-    border: 0;
+
+button {
+    color: lavenderblush;
+    border: none;
+    font-weight: bold;
+    font-size: 1.5em;
+    border-radius: 40px;
+    margin: 40px;
+    padding: 20px;
 }
+
 .intro-carousel {
     display: grid;
     grid-area: ir;
     margin: 0;
     width: 100%;
     height: fit-content;
-    background-color: var(--palepink)
-
+    background-color: var(--palepink);
+    right: -2.5vw;
+    bottom: -2.5vw;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
 }
 
 .symbol {
-    width: 50px;
-    margin-right: 0;
-    margin-bottom: 0;
-  }
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 5vw;
+
+}
 
 
 #partners-customers {
     display: grid;
     grid-area: pc;
+    margin: 30px;
+    padding: 30px;
 }
 
 #partners-customers-container {
     display: flex;
     width: 100%;
     justify-content: center;
-  }
-  
-  #customers-logo-container {
+}
+
+#customers-logo-container {
     width: 75%;
     margin: auto;
     width: fit-content;
-  }
-  
-  #partners-customers-title {
+}
+
+#partners-customers-title {
     font-style: italic;
     font-weight: bold;
     font-size: 1.5em;
     width: fit-content;
     margin: auto;
-  }
-  
-  .partner-image {
+}
+
+.partner-image {
     filter: grayscale(0);
     width: 200px;
-  }
-  
-  .partner-image:hover {
+}
+
+.partner-image:hover {
     filter: grayscale(100%);
-  }
-  
+}
+
+#video {
+    display: grid;
+    grid-area: v;
+    height: 500px;
+    background-color: var(--video-background);
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.video-box {
+    width: 80%;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+#cards {
+    display: grid;
+    grid-area: c;
+    grid-template-areas:
+        "t t t"
+        "st st st"
+        "cd cd cd"
+        "bn bn bn"
+    ;
+
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.cards-title {
+    display: grid;
+    grid-area: t;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    font-size: 5em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cards-subtitle {
+    display: grid;
+    grid-area: st;
+    color: var(--hoverpink);
+    font-size: 3em;
+    font-weight: bold;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+
+
+.cards {
+    display: grid;
+    grid-area: cd;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 70%;
+    align-items: stretch;
+    justify-items: center;
+    padding: 15px;
+}
+
+.card-image {
+
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.card-subtitle {
+    font-weight: normal;
+    font-size: 1.5em;
+    color: lightgrey;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.card-content {
+    font-size: 1em;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+
+.buttons {
+    display: grid;
+    grid-area: bn;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+
+.view-data-button {
+    background-color: darkslategrey;
+}
+
+.view-rd-button {
+    background-color: var(--hoverpink);
+}
+
+.view-digital-marketing-button {
+    background-color: royalblue;
+}
+
+.view-talent-button {
+    background-color: grey;
+}
