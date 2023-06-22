@@ -68,14 +68,13 @@ ul {
 
 .sub-menu {
     position: absolute;
-    top: 100%;
+    top: 50%;
     left: 0;
     width: 100%;
     height: 30px;
     z-index: 10;
     margin-top: 20px;
     display: none;
-    box-shadow: red;
 }
 
 .sub-menu-element {
@@ -125,12 +124,14 @@ ul li:hover .sub-menu {
 
 button {
     color: lavenderblush;
+    background-color: var(--hoverpink);
     border: none;
     font-weight: bold;
     font-size: 1.5em;
     border-radius: 40px;
     margin: 40px;
     padding: 20px;
+    width: max-content;
 }
 
 .intro-carousel {
@@ -219,7 +220,7 @@ button {
         "cd cd cd"
         "bn bn bn"
     ;
-
+    background-color: var(--paleblue);
     align-items: center;
     justify-items: center;
     justify-content: center;
@@ -266,6 +267,12 @@ button {
     align-items: stretch;
     justify-items: center;
     padding: 15px;
+    margin: 10px;
+    background-color: white;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.1), 
+    0px 2px 4px rgba(0,0,0,0.1), 
+    0px 4px 8px rgba(0,0,0,0.1), 
+    0px 8px 16px rgba(0,0,0,0.1);
 }
 
 .card-image {
